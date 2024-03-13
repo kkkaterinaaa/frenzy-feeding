@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class MouseLookX : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float sensitivity = 200f;
     void Update()
     {
-        
+        var horizontalAim = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
+        transform.Rotate(0, horizontalAim, 0);
     }
 }
